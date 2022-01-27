@@ -14,9 +14,11 @@ window.onload = function(){
         xhr.open("GET", "http://[2620:9b::1901:900a]:3200", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function(response){
-            var theResponse = JSON.parse(response);
-            for(var i = 0; i < theResponse.length; i++){
-                console.log(theResponse[i])
+            if(xhr.readyState == 4){
+                var theResponse = JSON.parse(xhr.responseText);
+                for(var i = 0; i < theResponse.length; i++){
+                    console.log(theResponse[i])
+                }
             }
         }
         xhr.send();
