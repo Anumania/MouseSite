@@ -16,7 +16,7 @@ window.onload = function(){
         xhr.onload = function(response){
             var theResponse = JSON.parse(response);
             for(var i = 0; i < theResponse.length; i++){
-                //console.log(theResponse[i])
+                console.log(theResponse[i])
             }
         }
         xhr.send();
