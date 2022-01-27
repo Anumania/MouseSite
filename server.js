@@ -1,8 +1,9 @@
 const http = require('http');
 const fs = require('fs')
 
+var mousePositions = {}
+
 const server = http.createServer(function (request, response) {
-    var mousePositions = {}
     if (request.method == 'OPTIONS') {
         response.writeHead(200, { 'Access-Control-Allow-Headers': '*', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' });
         response.end()
@@ -16,7 +17,6 @@ const server = http.createServer(function (request, response) {
     }
     if (request.method == 'GET') {
         ipsToSend = []
-        console.log(ipsToSend)
         for (var ip in mousePositions) {
             if (ip != request.socket.remoteAddress) {
                 ipsToSend.push(mousePositions[ip])
