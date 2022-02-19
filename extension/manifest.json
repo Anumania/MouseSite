@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+
+	"name": "Mice",
+	"description": "Bread man learns how to make extension with jae",
+	"version": "1.0",
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["background.js"]
+		}
+	],
+	"permissions": ["tabs"],
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_title": "Go to Dev.Opera!"
+	}
+}
