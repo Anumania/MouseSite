@@ -28,6 +28,6 @@ const server = http.createServer(function (request, response) {
 })
 
 const port = 3200
-const host = '2620:9b::1901:900a'
+const host = 'fe80::21a6:9715:e589:a6ae'
 server.listen(port, host)
 console.log(`Listening at http://${host}:${port}`)
